@@ -24,7 +24,13 @@
     <ClInclude Include="Unary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Negate.h">
+    <ClInclude Include="CompositeNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="levelOrder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,7 @@ public:
 	Leaf();
 	Leaf(int);
 	virtual ~Leaf();
+	//void levelOrder() override;
 	void preorder() override;
 	void inorder() override;
 	void postorder() override;

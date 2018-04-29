@@ -8,6 +8,7 @@ Unary::Unary()
 Unary::Unary(Component* temp)
 {
 	this->right = temp;
+	tree.push_back(this);
 }
 
 Unary::~Unary()

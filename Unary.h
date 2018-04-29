@@ -19,9 +19,7 @@ public:
 	void Add(Component*) override;
 	void Remove(Component*) override;
 		
-	int id;
 	Component* right;
-	vector<Component*>tree;
 };
 
 

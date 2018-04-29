@@ -11,7 +11,8 @@ public:
 
 	Negate(Component* right): Unary(right)
 	{
-		id = -1;
+		id = '-';
+		tree.push_back(this);
 	};
 
 	void preorder() override
@@ -77,7 +78,8 @@ public:
 
 	Adder(Component* left, Component* right) : Binary(left, right)
 	{
-		id = 123;
+		id = '+';
+		tree.push_back(this);
 	};
 
 	virtual ~Adder()
@@ -121,6 +123,8 @@ public:
 
 	Substracter(Component* left, Component* right) : Binary(left, right)
 	{
+		id = '-';
+		tree.push_back(this);
 	};
 
 	virtual ~Substracter()
@@ -165,6 +169,8 @@ public:
 
 	Multiplier(Component* left, Component* right) : Binary(left, right)
 	{
+		id = '*';
+		tree.push_back(this);
 	};
 
 	virtual ~Multiplier()
@@ -209,6 +215,8 @@ public:
 
 	Divider(Component* left, Component* right) : Binary(left, right)
 	{
+		id = '/';
+		tree.push_back(this);
 	};
 
 	virtual ~Divider()
