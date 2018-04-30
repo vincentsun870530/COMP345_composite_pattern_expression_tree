@@ -9,8 +9,18 @@ using namespace std;
 class NodeFactory
 {
 public:
+	virtual Component* buildBinary(char tempOperator, Component* left, Component* right) = 0;
+	virtual Component* buildUnary(char tempOperator, Component* right) = 0;
+	virtual Component* buildLeaf(int number) = 0;
+	virtual void levelOrderPrint() = 0;
+};
 
-	Component* getBinaryNode(char tempOperator, Component* left, Component* right)
+
+class IntNodeFactory : public NodeFactory
+{
+public:
+
+	Component* buildBinary(char tempOperator, Component* left, Component* right)
 	{
 		if (tempOperator == '+')
 		{
@@ -34,12 +44,12 @@ public:
 		}
 
 	};
-	Component* getUnaryFactory(char tempOperator, Component* right)
+	Component* buildUnary(char tempOperator, Component* right)
 	{
 		tree.push_back('-');
 		return new Negate(right);
 	};
-	Component* getLeafFactory(int number)
+	Component* buildLeaf(int number)
 	{
 		tree.push_back('0'+number);
 		return new Leaf(number);
@@ -56,49 +66,48 @@ public:
 	vector<char> tree;
 };
 
-
-
-class BinaryNodeFactory : public NodeFactory
-{
-public:
-	Component* getBinaryFactory (char tempOperator , Component* left, Component* right)
-	{
-		if(tempOperator == '+')
-		{
-			return new Adder(left, right);
-		}
-		else if(tempOperator == '-')
-		{
-			return new Substracter(left, right);
-		}
-		else if(tempOperator == '*')
-		{
-			return new Multiplier(left, right);
-		}
-		else if (tempOperator =='/')
-		{
-			return new Divider(left, right);
-		}
-
-	}
-};
-
-class UnaryNodeFactory : public NodeFactory
-{
-public:
-	Component * getUnaryFactory(char tempOperator, Component* right)
-	{
-		return new Negate(right);
-	}
-};
-
-class LeafFactory : public NodeFactory
-{
-public:
-	Component * getLeafFactory(int number)
-	{
-
-		return new Leaf(number);
-
-	}
-};
+//
+//class BinaryNodeFactory : public NodeFactory
+//{
+//public:
+//	Component* getBinaryFactory (char tempOperator , Component* left, Component* right)
+//	{
+//		if(tempOperator == '+')
+//		{
+//			return new Adder(left, right);
+//		}
+//		else if(tempOperator == '-')
+//		{
+//			return new Substracter(left, right);
+//		}
+//		else if(tempOperator == '*')
+//		{
+//			return new Multiplier(left, right);
+//		}
+//		else if (tempOperator =='/')
+//		{
+//			return new Divider(left, right);
+//		}
+//
+//	}
+//};
+//
+//class UnaryNodeFactory : public NodeFactory
+//{
+//public:
+//	Component * getUnaryFactory(char tempOperator, Component* right)
+//	{
+//		return new Negate(right);
+//	}
+//};
+//
+//class LeafFactory : public NodeFactory
+//{
+//public:
+//	Component * getLeafFactory(int number)
+//	{
+//
+//		return new Leaf(number);
+//
+//	}
+//};

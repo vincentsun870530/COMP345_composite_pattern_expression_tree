@@ -10,19 +10,11 @@ using namespace std;
 
 int main()
 {
-	//Leaf *a = new Leaf(5);
-	//Leaf *b = new Leaf(6);
-	//Leaf *c = new Leaf(7);
-	cout << "please enter your equation" << endl;
-	string input;
-	getline(cin, input);
-	cout << input <<endl;
-	cout << input.size() << endl;
 
-	NodeFactory * factory = new NodeFactory();
-	Component* a2 = factory->getLeafFactory(3);
-	Component* a3 = factory->getLeafFactory(4);
-	Component* a4 = factory->getBinaryNode('+',a2,a3);
+	NodeFactory * factory = new IntNodeFactory();
+	Component* a2 = factory->buildLeaf(3);
+	Component* a3 = factory->buildLeaf(4);
+	Component* a4 = factory->buildBinary('+',a2,a3);
 	cout << "-------------------------- " << endl;
 	cout << "-------------------------" << endl;
 	cout << "levelOrder:!!!!!!!!!!!!!!! " << endl;
@@ -52,7 +44,7 @@ int main()
 	cout << "Final value: " << a1->calculate()<<endl;
 	cout << "-------------------------- " << endl;
 	cout << "-------------------------" << endl;
-	cout << "levelOrder:!!!!!!!!!!!!!!! " << endl;
+	//cout << "levelOrder:!!!!!!!!!!!!!!! " << endl;
 	//a1->levelOrder();
 	system("pause");
 	return 0;

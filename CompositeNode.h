@@ -12,25 +12,24 @@ public:
 	Negate(Component* right): Unary(right)
 	{
 		id = '-';
-		tree.push_back(this);
 	};
 
 	void preorder() override
 	{
-		cout << "I'm Negate Operation" << id << endl;
+		cout << id << endl;
 		this->right->preorder();
 	};
 
 	void inorder() override
 	{
-		cout << "I'm Negate Operation" << id << endl;
+		cout <<  id << endl;
 		this->right->inorder();
 	};
 
 	void postorder() override
 	{
 		this->right->postorder();
-		cout << "I'm Negate Operation" << id << endl;
+		cout <<  id << endl;
 		
 	}
 
@@ -64,6 +63,7 @@ public:
 	virtual void preorder() = 0;
 	virtual void inorder() = 0;
 	virtual void postorder() = 0;
+	virtual int calculate() = 0;
 
 	Component* left;
 };
@@ -79,7 +79,7 @@ public:
 	Adder(Component* left, Component* right) : Binary(left, right)
 	{
 		id = '+';
-		tree.push_back(this);
+
 	};
 
 	virtual ~Adder()
@@ -88,7 +88,7 @@ public:
 
 	void preorder() override
 	{
-		cout << "I'm Add Operation" << id << endl;
+		cout  << id << endl;
 
 		this->left->preorder();
 		this->right->preorder();
@@ -96,7 +96,7 @@ public:
 	void inorder() override
 	{
 		this->left->inorder();
-		cout << "I'm Add Operation" << id << endl;
+		cout <<  id << endl;
 		this->right->inorder();
 	};
 
@@ -104,7 +104,7 @@ public:
 	{
 		this->left->postorder();
 		this->right->postorder();
-		cout << "I'm Add Operation" << id << endl;
+		cout << id << endl;
 
 	}
 
@@ -124,7 +124,6 @@ public:
 	Substracter(Component* left, Component* right) : Binary(left, right)
 	{
 		id = '-';
-		tree.push_back(this);
 	};
 
 	virtual ~Substracter()
@@ -133,7 +132,7 @@ public:
 
 	void preorder() override
 	{
-		cout << "I'm Substracter Operation" << id << endl;
+		cout << id << endl;
 
 		this->left->preorder();
 		this->right->preorder();
@@ -142,7 +141,7 @@ public:
 	void inorder() override
 	{
 		this->left->inorder();
-		cout << "I'm Substracter Operation" << id << endl;
+		cout << id << endl;
 		this->right->inorder();
 	}
 
@@ -150,7 +149,7 @@ public:
 	{
 		this->left->postorder();
 		this->right->postorder();
-		cout << "I'm Substracter Operation" << id << endl;
+		cout << id << endl;
 
 	}
 
@@ -170,7 +169,6 @@ public:
 	Multiplier(Component* left, Component* right) : Binary(left, right)
 	{
 		id = '*';
-		tree.push_back(this);
 	};
 
 	virtual ~Multiplier()
@@ -179,7 +177,7 @@ public:
 
 	void preorder() override
 	{
-		cout << "I'm Multiplier Operation" << id << endl;
+		cout <<  id << endl;
 		this->left->preorder();
 		this->right->preorder();
 
@@ -188,7 +186,7 @@ public:
 	void inorder() override
 	{
 		this->left->inorder();
-		cout << "I'm Multiplier Operation" << id << endl;
+		cout <<  id << endl;
 		this->right->inorder();
 	}
 
@@ -196,7 +194,7 @@ public:
 	{
 		this->left->postorder();
 		this->right->postorder();
-		cout << "I'm Multiplier Operation" << id << endl;
+		cout <<  id << endl;
 
 	}
 
@@ -216,7 +214,6 @@ public:
 	Divider(Component* left, Component* right) : Binary(left, right)
 	{
 		id = '/';
-		tree.push_back(this);
 	};
 
 	virtual ~Divider()
@@ -225,7 +222,7 @@ public:
 
 	void preorder() override
 	{
-		cout << "I'm Divider Operation" << id << endl;
+		cout <<id << endl;
 		this->left->preorder();
 		this->right->preorder();
 	
@@ -234,7 +231,7 @@ public:
 	void inorder() override
 	{
 		this->left->inorder();
-		cout << "I'm Divider Operation" << id << endl;
+		cout << id << endl;
 		this->right->inorder();
 	}
 
@@ -242,7 +239,7 @@ public:
 	{
 		this->left->postorder();
 		this->right->postorder();
-		cout << "I'm Divider Operation" << id << endl;
+		cout <<  id << endl;
 
 	}
 

@@ -9,7 +9,6 @@ Leaf::Leaf(int value)
 {
 	this->value = value;
 	id = '0' + this->value;
-	tree.push_back(this);
 }
 
 Leaf::~Leaf()
@@ -18,18 +17,18 @@ Leaf::~Leaf()
 
 void Leaf::preorder()
 {
-	cout << "I'm a leaf " << " value is " << value << endl;
+	cout << id << endl;
 }
 
 void Leaf::inorder()
 
 {
-	cout << "I'm a leaf " << " value is " << value << endl;
+	cout << id << endl;
 }
 
 void Leaf::postorder()
 {
-	cout << "I'm a leaf " << " value is " << value << endl;
+	cout << id << endl;
 }
 
 //void Leaf::levelOrder()

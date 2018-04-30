@@ -117,7 +117,6 @@
   <ItemGroup>
     <ClInclude Include="Component.h" />
     <ClInclude Include="CompositeNode.h" />
-    <ClInclude Include="levelOrder.h" />
     <ClInclude Include="NodeFactory.h" />
     <ClInclude Include="Unary.h" />
     <ClInclude Include="Leaf.h" />

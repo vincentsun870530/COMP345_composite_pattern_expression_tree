@@ -30,9 +30,6 @@
     <ClInclude Include="NodeFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="levelOrder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Leaf.cpp">

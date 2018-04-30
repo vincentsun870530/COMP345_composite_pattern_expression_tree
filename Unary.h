@@ -16,8 +16,8 @@ public:
 	virtual void postorder() = 0;
 	virtual int calculate() = 0;
 	//void Operation1();
-	void Add(Component*) override;
-	void Remove(Component*) override;
+	//void Add(Component*) override;
+	//void Remove(Component*) override;
 		
 	Component* right;
 };
